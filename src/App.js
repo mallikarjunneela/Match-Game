@@ -308,11 +308,10 @@ class App extends Component {
   }
 
   render() {
-    const {isTrue, time, score, imgUrl, category} = this.state
+    const {isTrue, category, score, time, imgUrl} = this.state
     const thumbnailList = imagesList.filter(
       eachValue => eachValue.category === category,
     )
-
     return (
       <div className="main-container">
         <nav className="nav-bar">
@@ -330,15 +329,15 @@ class App extends Component {
             <li className="score-div">
               <img
                 src="https://assets.ccbp.in/frontend/react-js/match-game-timer-img.png"
-                className="timer-img"
                 alt="timer"
+                className="timer-img"
               />
               <p className="time">{time} sec</p>
             </li>
           </ul>
         </nav>
         <div className="content-div">
-          {isTrue && (
+          {!isTrue && (
             <div className="first-div">
               <img src={imgUrl} className="big-image" alt="match" />
               <ul className="tab-elements">
